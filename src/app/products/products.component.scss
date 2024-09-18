@@ -1,0 +1,22 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.child {
+    flex: 1 0 21%;
+    margin: 5px;
+    height: 300px;
+  }
+
+.dropdowns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.dropdown2 {
+    margin-left: 10px;
+}

@@ -1,0 +1,88 @@
+{
+    "productDetails": [
+    {
+        "name": "Oppo",
+        "category": "phone",
+        "image": "./assets/phone1.webp",
+        "description": "This is a OPPO phone",
+        "price": 8000
+    },
+    {
+        "name": "Nokia",
+        "category": "phone",
+        "image": "./assets/phone2.jpg",
+        "description": "This is a NOKIA phone",
+        "price": 7800
+    },
+    {
+        "name": "Samsung",
+        "category": "phone",
+        "image": "./assets/phone3.webp",
+        "description": "This is a SAMSUNG phone",
+        "price": 34000
+    },
+    {
+        "name": "One Plus",
+        "category": "phone",
+        "image": "./assets/oneplusphone.webp",
+        "description": "This is a ONE PLUS phone",
+        "price": 20000
+    },
+    {
+        "name": "Apple",
+        "category": "phone",
+        "image": "./assets/applephone.webp",
+        "description": "This is a APPLE phone",
+        "price": 60000
+    },
+    {
+        "name": "Redmi",
+        "category": "phone",
+        "image": "./assets/redmiphone.jpg",
+        "description": "This is a REDMI phone",
+        "price": 7600
+    },
+    {
+        "name": "Realme",
+        "category": "phone",
+        "image": "./assets/phone4.jpg",
+        "description": "This is a REALME phone",
+        "price": 4590
+    },
+    {
+        "name": "Sony TV",
+        "category": "TV",
+        "image": "./assets/tv1.jpg",
+        "description": "This is a SONY tv. It has brilliant display",
+        "price": 55000
+    },
+    {
+        "name": "One Plus TV",
+        "category": "TV",
+        "image": "./assets/oneplustv.jpg",
+        "description": "This is a One Plus TV. It has brilliant display",
+        "price": 58000
+    },
+    {
+        "name": "Samsung TV",
+        "category": "TV",
+        "image": "./assets/samsungtv.jpg",
+        "description": "This is a Samsung TV. It has brilliant display",
+        "price": 60000
+    },
+    {
+        "name": "Onida TV",
+        "category": "TV",
+        "image": "./assets/onidatv.jpeg",
+        "description": "This is a Onida TV. It has brilliant display",
+        "price": 40000
+    },
+    {
+        "name": "Haier TV",
+        "category": "TV",
+        "image": "./assets/haiertv.webp",
+        "description": "This is a Haier TV. It has brilliant display",
+        "price": 70000
+    }
+    ]
+}

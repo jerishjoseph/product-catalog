@@ -1,0 +1,34 @@
+<div class="dropdowns">
+<div class="dropdown1">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter By Category
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" (click)="onSelect('TV')">TV</a></li>
+    <li><a class="dropdown-item" (click)="onSelect('phone')">Phone</a></li>
+  </ul>
+</div>
+
+<div class="dropdown2">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Sort By
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" (click)="sort('category')">Category</a></li>
+    <li><a class="dropdown-item" (click)="sort('price')">Price</a></li>
+  </ul>
+</div>
+</div>
+
+<div class="products">
+    @for (product of items;track product.name) {
+    <div class="card child">
+        <img src="{{product.image}}" height="150" width="100" class="card-img-top" alt="error">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="card-text">Price: {{product.price}}</p>
+        </div>
+    </div>
+    }
+</div>
