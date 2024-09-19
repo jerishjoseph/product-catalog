@@ -1,13 +1,34 @@
-image: node:20.11.0
+# gitlab-ci.yaml
+# you can use any versions here but I'm fine with this version
+image: node:14.18.2
+# we just want to cache our package-lock and node_modules during the stages
 cache:
+  key:
+    files:
+      - package-lock.json
   paths:
     - node_modules/
-deploy_stage:
-  stage: deploy
-  only:
-    - master
+# define stages
+stages:
+  - build
+  - deploy
+# define variables you can refer to them using "$" and the variable name
+variables:
+  SURGE_DOMAIN: https://productcatalog.surge.sh
+  SURGE_TOKEN: 452ee8befe7ed258ace4c545a29e524d
+# make sure you cache the build file since you might want to deploy the same changes over and over without running the pipeline
+build:
+  stage: build
+  before_script:
+    - npm run ci
   script:
-    - rm ./package-lock.json
-    - npm install
-    - ./node_modules/@angular/cli/bin/ng build --progress false --prod --base-href http://productcatalog.surge.sh/
-    - ./node_modules/.bin/surge -p dist/product-catalog-app/ --domain http://productcatalog.surge.sh/
+    - npm run build
+  artifacts:
+    paths:
+      - build
+deploy:
+  stage: deploy
+  before_script:
+    - npm install -g surge
+  script:
+    - surge ./build $https://productcatalog.surge.sh --token $452ee8befe7ed258ace4c545a29e524d
