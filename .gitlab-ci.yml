@@ -1,34 +1,16 @@
-# gitlab-ci.yaml
-# you can use any versions here but I'm fine with this version
-image: node:14.18.2
-# we just want to cache our package-lock and node_modules during the stages
-cache:
-  key:
-    files:
-      - package-lock.json
-  paths:
-    - node_modules/
-# define stages
-stages:
-  - build
-  - deploy
-# define variables you can refer to them using "$" and the variable name
-variables:
-  SURGE_DOMAIN: https://productcatalog.surge.sh
-  SURGE_TOKEN: 452ee8befe7ed258ace4c545a29e524d
-# make sure you cache the build file since you might want to deploy the same changes over and over without running the pipeline
-build:
-  stage: build
-  before_script:
-    - npm run ci
+# The Docker image that will be used to build your app
+image: product-catalog
+# Functions that should be executed before the build script is run
+before_script:
+  - npm install
+pages:
   script:
     - npm run build
   artifacts:
     paths:
-      - build
-deploy:
-  stage: deploy
-  before_script:
-    - npm install -g surge
-  script:
-    - surge ./build $https://productcatalog.surge.sh --token $452ee8befe7ed258ace4c545a29e524d
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
