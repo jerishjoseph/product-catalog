@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
 
     ngOnInit() {
       this.items = this.products['productDetails'];
+      console.log("initialised");
     }
 
     onSelect(category: any) {
